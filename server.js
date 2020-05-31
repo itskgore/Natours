@@ -1,8 +1,8 @@
 const dotenv = require('dotenv');
 // Uncaught Exception
 process.on('uncaughtException', err => {
-  console.log(err.name, err.message);
-  console.log('Uncaught Exception.... Shutting down...');
+  // console.log(err.name, err.message);
+  // console.log('Uncaught Exception.... Shutting down...');
   process.exit(1); //0 =success 1= un caught exception
 });
 // Uncaught Exception END
@@ -38,13 +38,13 @@ const app = require('./index');
 // Server starting
 const port = process.env.PORT;
 const server = app.listen(port, () => {
-  console.log(`running on port ${port}....`);
+  // console.log(`running on port ${port}....`);
 });
 
 //Unhandled Rejection
 process.on('unhandledRejection', err => {
-  console.log(err.name, err.message);
-  console.log('Unhandled Rejection.... Shutting down...');
+  // console.log(err.name, err.message);
+  // console.log('Unhandled Rejection.... Shutting down...');
   server.close(() => {
     process.exit(1); //0 =success 1= un caught exception
   });

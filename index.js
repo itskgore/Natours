@@ -18,6 +18,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const reviewRouter = require('./routes/reviewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
+const compression = require('compression');
 // 1 Global Middlewares
 
 // Serving static files
@@ -84,6 +85,11 @@ app.use((req, res, next) => {
   // console.log(req.cookies);
   next();
 });
+
+//Compression package middleware
+
+app.use(compression());
+//Compression package middleware END
 
 // app.get('/', (req, res) => {
 //   //   res.status(200).send('Hello  from server');

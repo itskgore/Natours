@@ -54,7 +54,7 @@ const sendErrorProd = (err, req, res) => {
   //TEMPLATE RENDER WEBSITE
   if (err.isOperational) {
     //Operation Error trusted error we can send msg to client
-    console.log(err);
+    // console.log(err);
     return res.status(err.statusCode).render('error', {
       status: err.status,
       msg: err.message
@@ -63,7 +63,7 @@ const sendErrorProd = (err, req, res) => {
   //Third Party lib or unknown error don't want to send msg to client
 
   // 1) Logging the error
-  // console.error(err);
+  console.error(err);
 
   // 2) Send a generic msg
   return res.status(404).render('error', {
