@@ -17,8 +17,7 @@ module.exports = class Email {
         port: 587,
         auth: {
           user: 'apikey',
-          pass:
-            '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'
+          pass: process.env.SEND_GRID_PASSWORD
         }
       });
     }
